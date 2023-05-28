@@ -1,0 +1,3 @@
+[submodule "infra-configs"]
+	path = Django-Uwsgi-Nginx-Set-Up
+	url = https://github.com/mumoj/Django-Uwsgi-Nginx-Set-Up.git
