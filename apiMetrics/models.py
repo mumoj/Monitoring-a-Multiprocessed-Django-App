@@ -16,6 +16,8 @@ class Transaction(models.Model):
     amount = models.DecimalField(max_digits=5, decimal_places=2)
     api = models.ForeignKey(API, on_delete=models.CASCADE)
     status = models.ForeignKey(TransactionStatus, on_delete=models.CASCADE)
+    time_created = models.DateTimeField(auto_now=True)
+    time_modified = models.DateTimeField(auto_now_add=True)
 
 
 

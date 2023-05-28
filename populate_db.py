@@ -7,7 +7,6 @@ django.setup()
 
 from apiMetrics.models import *
 
-
 STATUSES = ['TimedOut', 'Pending', 'Processing', 'Processed', 'Failed']
 
 def get_status():
@@ -20,8 +19,7 @@ def apis():
     if not API.objects.count() == 2:
         API.objects.create(name="Mpesa Express", description="Mpesa Express", params= {})
         API.objects.create(name = "Mpesa B2C", description="Mpesa B2C", params={})
-    else:
-        return API.objects.all()
+    return API.objects.all()
     
 def populate(n=50):
     _apis = apis()
@@ -30,10 +28,8 @@ def populate(n=50):
         Transaction.objects.create(amount=random.randint(11100,99999)/100,
                 api=random.choice(_apis),
                 status = get_status()
-            )
-        
+        )
     print('DB Populated')
-
 
 if __name__ == "__main__":
     populate()

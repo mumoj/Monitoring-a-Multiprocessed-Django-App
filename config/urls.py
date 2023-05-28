@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from apiMetrics.views import api_metrics
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('metrics', api_metrics),
 ]
